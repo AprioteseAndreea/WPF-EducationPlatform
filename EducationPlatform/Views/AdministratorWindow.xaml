@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="EducationPlatform.Views.AdministratorWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EducationPlatform.Views"
+             mc:Ignorable="d"  Height="670.002" Width="937.579">
+    <Canvas Margin="0,1,3.333,-1" RenderTransformOrigin="0.5,0.5">
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform AngleY="0.739"/>
+                <RotateTransform/>
+                <TranslateTransform Y="4.654"/>
+            </TransformGroup>
+        </Canvas.RenderTransform>
+        <Image Source="..\Resources\EducationPlatformBackground.jpg" Height="662" Width="975" Canvas.Left="-21" Canvas.Top="10"/>
+
+        <Button Name="BTN1" Canvas.Left="61" Canvas.Top="96" Height="204" Width="221" Click="BTN1_Click" >
+            <Image Source="..\Resources\ClassAndSubjects.jpg" Height="218" Width="261" Canvas.Left="45"/>
+
+        </Button>
+        <Button Name="BTN2" Canvas.Left="339" Canvas.Top="96" Height="204" Width="222" Click="BTN2_Click">
+            <Image Source="..\Resources\TeacherClassSubjects.jpg" Height="218" Width="222" Canvas.Left="465" RenderTransformOrigin="1.233,0.523"/>
+
+        </Button>
+        <Button Name="BTN3" Canvas.Left="624" Canvas.Top="96" Height="204" Width="223" Click="BTN3_Click">
+            <Image Source="..\Resources\StudentClass.jpg" Height="228" Width="223" Canvas.Left="871"/>
+
+        </Button>
+        <Button Name="Students" Canvas.Left="62" Background="Transparent" Canvas.Top="327" Height="89" Width="220" Click="Students_Click">
+            <Image Source="..\Resources\AddStudent.jpg" Canvas.Left="45" Canvas.Top="135" Height="98" Width="230"></Image>
+
+        </Button>
+        <Button Name="ClassMasters" Canvas.Left="624" Background="Transparent" Canvas.Top="327" Height="89" Width="223" Click="ClassMasters_Click">
+            <Image Source="..\Resources\AddClassMaster.jpg" Canvas.Left="465" Canvas.Top="135" Height="96" Width="223" RenderTransformOrigin="0.5,0.5">
+
+            </Image>
+
+        </Button>
+        <Button Name="Teachers" Canvas.Left="61" Background="Transparent" Canvas.Top="439" Height="98" Width="221" Click="Teachers_Click">
+            <Image Source="..\Resources\AddTeacher.jpg" Canvas.Left="465" Canvas.Top="135" Height="98" Width="214"></Image>
+
+        </Button>
+        <Button Name="Classes" Canvas.Left="339" Background="Transparent" Canvas.Top="327" Height="89" Width="222" Click="Classes_Click">
+            <Image Source="..\Resources\AddClass.jpg" Canvas.Left="871" Canvas.Top="135" Height="109" Width="222"></Image>
+
+        </Button>
+        <Button Name="Subjects" Canvas.Left="339" Background="Transparent" Canvas.Top="439" Height="98" Width="222" Click="Subjects_Click">
+            <Image Source="..\Resources\AddSubject.jpg" Canvas.Left="871" Canvas.Top="135" Height="105" Width="222"></Image>
+
+        </Button>
+        <Button Name="Thesis" Canvas.Left="624" Background="Transparent" Canvas.Top="439" Height="98" Width="223" Click="Thesis_Click">
+            <Image Source="..\Resources\AddThesis.jpg" Canvas.Left="871" Canvas.Top="135" Height="99" Width="223"></Image>
+
+        </Button>
+
+
+
+
+    </Canvas>
+</UserControl>
