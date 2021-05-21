@@ -1,0 +1,47 @@
+﻿<Window x:Class="EducationPlatform.Views.TotalOfAbsencesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationPlatform.Views" xmlns:ctx="clr-namespace:EducationPlatform.ViewModels" xmlns:convert="clr-namespace:EducationPlatform.Converters"
+        mc:Ignorable="d"
+        Title="TotalOfAbsencesWindow" Height="600" Width="500">
+    <Window.DataContext>
+        <ctx:AbsenceViewModel/>
+    </Window.DataContext>
+    <Canvas>
+        <Image Source="..\Resources\EducationPlatformBackground.jpg" Height="662" Width="975" Canvas.Left="-291"/>
+
+        <StackPanel>
+            <StackPanel.Resources>
+                <convert:AbsenceConvert x:Key="absenceConvert" />
+            </StackPanel.Resources>
+            <WrapPanel>
+                <Label Foreground="Blue" FontSize="20" FontWeight="DemiBold">Numarul total de absente:</Label>
+                <TextBox Name="TotalAbsences" Background="Transparent" Text="{Binding TotalAbsences}" FontSize="20" Width="86"></TextBox>
+
+            </WrapPanel>
+            <DataGrid x:Name="absencesGrid"  Margin="0,15,0,0" AutoGenerateColumns="False" Height="378"
+                  ItemsSource="{Binding AbsencesListTwo}" IsReadOnly="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible" Width="494">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="SubjectId" Binding="{Binding SubjectID}"/>
+                    <DataGridTextColumn Header="StudentId" Binding="{Binding StudentID}"/>
+                    <DataGridTextColumn Header="SemesterId" Binding="{Binding SemesterID}"/>
+                    <DataGridTextColumn Header="TeacherId" Binding="{Binding TeacherID}"/>
+                    <DataGridTextColumn Header="Date" Binding="{Binding Date}"/>
+                    <DataGridTextColumn Header="State" Binding="{Binding State}"/>
+
+
+                </DataGrid.Columns>
+                <DataGrid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+
+                        <GradientStop Color="DeepSkyBlue" Offset="0.00" />
+                        <GradientStop Color="MediumPurple" Offset="1.0" />
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+            </DataGrid>
+        </StackPanel>
+    </Canvas>
+</Window>
