@@ -1,0 +1,65 @@
+﻿<Window x:Class="EducationPlatform.Views.FinalAverageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EducationPlatform.Views" xmlns:ctx="clr-namespace:EducationPlatform.ViewModels"
+        mc:Ignorable="d"
+        Title="FinalAverageWindow" Height="600" Width="500">
+    <Window.DataContext>
+        <ctx:StudentSubjectAverageViewModel/>
+    </Window.DataContext>
+    <Canvas>
+        <Image Source="..\Resources\EducationPlatformBackground.jpg" Height="672" Canvas.Left="-5" Margin="0,0,-681.667,0"/>
+
+        <StackPanel>
+            <DataGrid x:Name="studentsGrid"  AutoGenerateColumns="False" Height="140"
+                  ItemsSource="{Binding StudentsList}" IsReadOnly="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible" Width="473" Margin="10,0,10.333,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding StudentID}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="BirthDate" Binding="{Binding BirthDate}"/>
+
+
+                </DataGrid.Columns>
+                <DataGrid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="DeepSkyBlue" Offset="0.00" />
+                        <GradientStop Color="MediumPurple" Offset="1.0" />
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+            </DataGrid>
+            <Canvas Height="54" Margin="0,0,0.333,0">
+
+                <Button Width="121" Height="38" Command="{Binding ShowCommand}"
+                    CommandParameter="{Binding SelectedItem, ElementName=studentsGrid}" Canvas.Left="318" Canvas.Top="16">
+                    <Image Source="..\Resources\showaverages.jpg" Width="118" Height="40"/>
+                </Button>
+            </Canvas>
+            <WrapPanel>
+                <Label Content="{Binding ErrorMessage}" FontSize="15" Foreground="Red" Height="30"/>
+            </WrapPanel>
+            <DataGrid x:Name="marksGrid"  Margin="4,15,3.333,0" AutoGenerateColumns="False" Height="182"
+                  ItemsSource="{Binding StudentSubjectAverageList}"  IsReadOnly="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible" Width="463">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Student Id" Binding="{Binding StudentID}"/>
+                    <DataGridTextColumn Header="SubjectId" Binding="{Binding SubjectID}"/>
+                    <DataGridTextColumn Header="Average" Binding="{Binding Average}"/>
+
+
+
+                </DataGrid.Columns>
+                <DataGrid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="DeepSkyBlue" Offset="0.00" />
+                        <GradientStop Color="MediumPurple" Offset="1.0" />
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+            </DataGrid>
+
+        </StackPanel>
+    </Canvas>
+</Window>
